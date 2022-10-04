@@ -20,7 +20,7 @@ class PullRequestCubit extends Cubit<PullRequestState> {
   List<PullRequestEntity> _openedPulls = [];
   List<PullRequestEntity> _closedPulls = [];
 
-  Future<void> getOpenedPullRequests() async {
+  Future<void> getPullRequests() async {
     emit(
       PullRequestLoading(type: pullRequestType),
     );

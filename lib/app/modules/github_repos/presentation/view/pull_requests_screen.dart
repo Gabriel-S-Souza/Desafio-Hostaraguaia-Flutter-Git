@@ -19,7 +19,7 @@ class _PullRequestsScreenState extends State<PullRequestsScreen> {
   @override
   void initState() {
     super.initState();
-    _controller.pullRequestCubit.getOpenedPullRequests();
+    _controller.pullRequestCubit.getPullRequests();
   }
 
   @override
