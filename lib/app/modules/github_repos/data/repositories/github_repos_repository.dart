@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../../core/exception/exception_app.dart';
+import '../../../../core/core.dart';
 import '../../domain/domain.dart';
 
 class GithubReposRepositoryImp implements GithubReposRepository {

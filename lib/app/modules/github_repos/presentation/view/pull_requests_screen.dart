@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../di/di.dart';
 import '../../github_repos.dart';
-import 'widgets/item_pull_request_widget.dart';
 import 'widgets/widgets.dart';
 
 class PullRequestsScreen extends StatefulWidget {
