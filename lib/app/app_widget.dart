@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'core/core.dart';
-import 'modules/github_repos/presentation/view/pull_requests_screen.dart';
 import 'modules/modules.dart';
 
 class AppWidget extends StatelessWidget {
@@ -13,7 +12,7 @@ class AppWidget extends StatelessWidget {
         theme: ThemeApp.theme,
         routes: <String, WidgetBuilder>{
           '/repos': (BuildContext context) => ReposScreen(),
-          '/pulls': (BuildContext context) => PullRequestsScreen(),
+          '/pulls': (BuildContext context) => const PullRequestsScreen(),
         },
         initialRoute: '/repos',
       );
