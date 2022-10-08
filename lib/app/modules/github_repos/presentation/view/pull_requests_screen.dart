@@ -48,7 +48,7 @@ class _PullRequestsScreenState extends State<PullRequestsScreen> {
                       onPressed: () => _controller.pullRequestCubit
                           .setPullRequestType(PullRequestType.opened),
                       text: '${state.pullsOpened.length} opened',
-                      color: state.pullType == PullRequestType.opened
+                      color: state.pullSelectedType == PullRequestType.opened
                           ? Theme.of(context).colorScheme.surface
                           : Theme.of(context).colorScheme.tertiary,
                     ),
@@ -62,7 +62,7 @@ class _PullRequestsScreenState extends State<PullRequestsScreen> {
                       onPressed: () => _controller.pullRequestCubit
                           .setPullRequestType(PullRequestType.closed),
                       text: '${state.pullsClosed.length} closed',
-                      color: state.pullType == PullRequestType.closed
+                      color: state.pullSelectedType == PullRequestType.closed
                           ? Theme.of(context).colorScheme.surface
                           : Theme.of(context).colorScheme.tertiary,
                     ),
@@ -74,7 +74,7 @@ class _PullRequestsScreenState extends State<PullRequestsScreen> {
                   builder: (context) {
                     if (state is PullRequestCompleted) {
                       final currentPullList =
-                          state.pullType == PullRequestType.opened
+                          state.pullSelectedType == PullRequestType.opened
                               ? state.pullsOpened
                               : state.pullsClosed;
 

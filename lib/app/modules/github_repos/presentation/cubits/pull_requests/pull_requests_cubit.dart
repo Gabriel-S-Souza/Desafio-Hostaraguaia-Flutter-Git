@@ -15,14 +15,14 @@ class PullRequestCubit extends Cubit<PullRequestState> {
         );
 
   late GithubRepoEntity? repo;
-  PullRequestType pullRequestType = PullRequestType.opened;
+  PullRequestType pullRequestSelectedType = PullRequestType.opened;
 
   List<PullRequestEntity> _openedPulls = [];
   List<PullRequestEntity> _closedPulls = [];
 
   Future<void> getPullRequests() async {
     emit(
-      PullRequestLoading(type: pullRequestType),
+      PullRequestLoading(type: pullRequestSelectedType),
     );
     final response = await _pullRequestCase.getPullRequests(
       repo!.login,
@@ -47,7 +47,7 @@ class PullRequestCubit extends Cubit<PullRequestState> {
           PullRequestCompleted(
             opened: _openedPulls,
             closed: _closedPulls,
-            type: pullRequestType,
+            type: pullRequestSelectedType,
           ),
         );
       },
@@ -55,14 +55,14 @@ class PullRequestCubit extends Cubit<PullRequestState> {
   }
 
   void setPullRequestType(PullRequestType type) {
-    if (type == pullRequestType) return;
+    if (type == pullRequestSelectedType) return;
 
-    pullRequestType = type;
+    pullRequestSelectedType = type;
     emit(
       PullRequestCompleted(
         opened: _openedPulls,
         closed: _closedPulls,
-        type: pullRequestType,
+        type: pullRequestSelectedType,
       ),
     );
   }
