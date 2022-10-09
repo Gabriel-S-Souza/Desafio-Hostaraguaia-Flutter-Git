@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 
 import '../../../../../../core/core.dart';
-import '../../../../domain/domain.dart';
 import '../../../models/models.dart';
+import '../../contracts/contracts.dart';
 
 class HttpClientImp implements HttpClient {
   final Dio _dio;

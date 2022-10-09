@@ -1,4 +1,4 @@
-import '../../../domain.dart';
+import '../../../../domain/domain.dart';
 
 abstract class RemoteDataSource {
   Future<List<GithubRepoEntity>> getRepos(int pageNumber);

@@ -1,4 +1,5 @@
 import '../../../domain/domain.dart';
+import '../contracts/contracts.dart';
 
 class LocalDataSourceImp implements LocalDataSource {
   @override
