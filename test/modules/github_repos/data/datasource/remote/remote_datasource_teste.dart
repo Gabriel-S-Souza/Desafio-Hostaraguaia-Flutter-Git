@@ -1,9 +1,10 @@
 import 'package:desafio_hostaraguaia_flutter/app/di/di.dart';
+import 'package:desafio_hostaraguaia_flutter/app/modules/github_repos/data/datasource/contracts/remote/remote_datasource.dart';
 import 'package:desafio_hostaraguaia_flutter/app/modules/github_repos/domain/domain.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class HttpMock extends Mock implements RemoteDataSource {}
+class RemoteDataSourceMock extends Mock implements RemoteDataSource {}
 
 final repoEntity = GithubRepoEntity(
   id: 1,
@@ -18,7 +19,7 @@ final repoEntity = GithubRepoEntity(
 
 void main() {
   Locator.setUpDependencies();
-  final remoteDataSource = Locator.get<RemoteDataSource>();
+  final remoteDataSource = RemoteDataSourceMock();
   final List<GithubRepoEntity> reposMockList = [];
   for (var i = 0; i < 10; i++) {
     reposMockList.add(repoEntity);
