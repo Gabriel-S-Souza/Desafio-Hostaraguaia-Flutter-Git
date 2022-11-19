@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../../../core/core.dart';
-import '../../domain.dart';
+import '../../../../core/core.dart';
+import '../domain.dart';
 
 abstract class GithubReposRepository {
   Future<Either<ExceptionApp, List<GithubRepoEntity>>> getReposFromApi(

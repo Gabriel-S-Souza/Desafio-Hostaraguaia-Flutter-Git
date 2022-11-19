@@ -1,4 +1,4 @@
-import '../../../domain.dart';
+import '../../../../domain/domain.dart';
 
 abstract class LocalDataSource {
   Future<List<GithubRepoEntity>> getLocally();

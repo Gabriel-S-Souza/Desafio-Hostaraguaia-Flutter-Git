@@ -1,6 +1,7 @@
 import '../../../../../core/core.dart';
 import '../../../domain/domain.dart';
 import '../../data.dart';
+import '../contracts/contracts.dart';
 
 class RemoteDataSourceImp implements RemoteDataSource {
   final HttpClient httpClient;
